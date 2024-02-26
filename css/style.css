@@ -1,0 +1,5 @@
+div #showcase {
+  background-image: url(../IMG-20240206-WA0030.jpg);
+  background-size: cover;
+  height: 400px;
+}

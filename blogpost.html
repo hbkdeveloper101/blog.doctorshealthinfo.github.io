@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Doctors Health Info - Blog</title>
+    <meta
+      name="description"
+      content="Doctors Health Info is a health related blog"
+    />
+    <meta
+      name="keywords"
+      content="health,doctors,information, blood donate, blog,health blog, Talk with doctors"
+    />
+    <link rel="stylesheet" href="./css/tailwindcss.css" />
+    <link rel="stylesheet" href="./css/style.css" />
+    <link
+      rel="stylesheet"
+      href="./assets/fontawesome-free-6.5.1-web/css/all.min.css"
+    />
+  </head>
+  <body class="bg-slate-200 scroll-smooth">
+    <!--modal for search-->
+    <div
+      class="hidden flex-col text-white text-lg h-screen w-screen absolute bg-black opacity-95"
+      id="search-modal"
+    >
+      <button
+        class="hover:text-orange-400 absolute top-4 right-8 text-3xl md:right-20"
+        id="close-btn"
+      >
+        &times;
+      </button>
+      <form class="mt-28 mx-auto" action="">
+        <div class="bg-slate-200 rounded-2xl">
+          <input
+            class="rounded-l-2xl h-[50px] pl-6 focus:outline-0 border-0 text-black"
+            type="search"
+            name="search"
+            id="search"
+            placeholder="Search"
+          />
+          <button class="hover:text-orange-400 text-black px-4" type="submit">
+            <i class="fa-solid fa-search"></i>
+          </button>
+        </div>
+        <p class="text-center mx-auto my-4">Press Enter to search</p>
+      </form>
+    </div>
+
+    <!--header-->
+    <header class="bg-theme-primary text-white w-full shadow p-1 shadow-black">
+      <!--Navigation-->
+      <nav
+        class="flex items-center mt-1 justify-between px-1 h-16 md:gap-4 md-w-full"
+        id="dropdown"
+      >
+        <!--Logo and Name-->
+        <div class="flex flex-row justify-center items-center">
+          <img
+            class="h-[50px] w-[50px] rounded-full px-1 py-1 md:ml-4"
+            src="./logo.PNG"
+            alt=""
+          />
+          <h1
+            class="hover:text-orange-400 text-nowrap text-base font-bold border-2 px-1 m sm:text-base lg:text-2xl lg:p-2 lg:mx-6"
+          >
+            <a href="./index.html">Doctors Health Info</a>
+          </h1>
+        </div>
+        <!--Main Nav - behave dropdown-->
+        <div
+          id="dropdown-menu"
+          class="absolute -top-full left-0 max-md:bg-theme-primary w-full flex flex-col gap-2 text-sm md:static md:flex-row md:justify-between md:text-sm lg:px-16"
+        >
+          <ul
+            class="pb-4 md:pb-0 flex flex-col items-center gap-2 font-bold md:ml-4 md:flex-row md:gap-4 lg:text-lg lg:gap-8"
+          >
+            <li class="hover:text-orange-400">
+              <a class="" href="./index.html"
+                ><i class="fa-solid fa-home"></i
+              ></a>
+            </li>
+            <li class="hover:text-orange-400 text-nowrap">
+              <a href="./doctors.html">Doctors</a>
+            </li>
+            <li class="hover:text-orange-400 text-nowrap">
+              <a href="./hospitals.html">Hospitals</a>
+            </li>
+            <li class="hover:text-orange-400 text-nowrap">
+              <a href="./forum.html">Forum</a>
+            </li>
+            <li class="hover:text-orange-400 text-nowrap">
+              <a href="./blog.html">Blog</a>
+            </li>
+          </ul>
+        </div>
+        <!--Hamburger Menu Button-->
+        <div class="flex fle-row">
+          <!--Profile and search-->
+          <div
+            class="flex flex-row gap-2 md:gap-8 px-auto text-lg mx-auto md:mr-12"
+          >
+            <button
+              class="hover:text-orange-400 text-nowrap static md:px-2 md:py-1"
+              id="search-btn"
+            >
+              <i class="fa-solid fa-search fa-md"></i>
+            </button>
+            <button
+              class="hover:text-orange-400 text-nowrap static md:px-2 px-1 md:border md:rounded-full md:mr-2"
+              id="profile-btn"
+            >
+              <i class="fa-solid fa-user fa-md"></i>
+            </button>
+            <div
+              class="flex flex-col absolute -top-full right-7 lg:right-6 z-20 bg-slate-300 text-black text-sm gap-1 font-semibold rounded-md px-2 py-1"
+              id="profile-modal"
+            >
+              <a class="hover:text-orange-400 text-nowrap" href="./signin.html"
+                ><i class="fa-solid fa-sign-in-alt pr-2"></i>Log In</a
+              >
+              <a class="hover:text-orange-400 text-nowrap" href="./signup.html"
+                ><i class="fa-solid fa-sign-out-alt pr-2"></i>Sign Up</a
+              >
+            </div>
+          </div>
+          <!--Hamburger Menu-->
+          <div class="border px-1 m-2 rounded-md md:hidden" id="toggle-button">
+            <i class="fa-solid fa-bars fa-lg"></i>
+          </div>
+        </div>
+      </nav>
+    </header>
+    <!--categories template for middle and large screen only-->
+    <nav
+      class="hidden text-sm md:flex flex-row w-full overflow-hidden bg-slate-100"
+    >
+      <ul
+        class="grid md:grid-cols-8 lg:grid-cols-10 mx-auto gap-2 overflow-visible font-semibold text-blue-800"
+      >
+        <li class="text-nowrap my-1 py-0"><a href="">Skin Health</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Diseases</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Fitness</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Skin Health</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Diseases</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Fitness</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Skin Health</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Diseases</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Fitness</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Skin Health</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Diseases</a></li>
+        <li class="text-nowrap"><a href="">Fitness</a></li>
+        <li class="text-nowrap"><a href="">Skin Health</a></li>
+        <li class="text-nowrap"><a href="">Diseases</a></li>
+        <li class="text-nowrap"><a href="">Fitness</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Diseases</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Fitness</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Skin Health</a></li>
+        <li class="text-nowrap my-1 py-0"><a href="">Diseases</a></li>
+      </ul>
+    </nav>
+
+    <!--Adverstisement Area -->
+    <div
+      id="ads"
+      class="hidden w-[300px] h-[150px] mx-auto mt-2 bg-black"
+    ></div>
+    <div id="ads" class="hidden w-[300px] h-[150px] mx-auto mt-2 bg-black">
+      <!--Adverstisement Area 300x150-->
+    </div>
+    <main class="flex flex-col w-full">
+      <article class="mx-4 bg-white px-2 pb-4 mt-2 lg:mx-auto lg:my-4 lg:px-8 md:w-4/5 md:pt-4 shadow-sm rounded-2xl shadow-black">
+        <!--Title author name and published date-->
+        <!--post title-->
+        <h1 class="text-xl text-center font-semibold py-2 lg:px-8 lg:text-3xl  lg:p-4 ">
+          Lorem ipsum dolor, sit amet consectetur adipisicing elit. Ipsum animi
+          pariatur nihil hic sequi ullam
+        </h1>
+        <!--Writer and date-->
+        <div class="flex flex-col md:flex-row place-content-center lg:gap-4 lg:px-8 pb-2 text-sm" id="title_writer">
+          <p>
+            <a href="#writer">By: <span class="font-semibold text-blue-700">Author name</span></a>
+          </p>
+          <p>
+            Published at: <span class="font-semibold text-blue-700">Feb 24, 2024</span>
+          </p>
+        </div>
+        <!--Post photo-->
+        <div class="flex flex-row lg:gap-4 lg:px-8 pb-2 text-sm">
+          <img class="w-full pt-2 lg:h-[400px] rounded-lg" src="./IMG-20240206-WA0030.jpg" alt="" />
+        </div>
+
+        <!--embed video if exist-->
+        <div class="flex flex-row lg:gap-4 lg:px-8 py-4 text-sm">
+          <video class="w-full pt-2 lg:h-[400px]" controls>
+            <source src="./public/video.mp4" type="video/mp4">
+          </video>
+        </div>
+
+        <!--Post content-->
+        <div class="md:px-6">
+          <p class="text-base pt-2 lg:p-3 lg:indent-4 text-left">
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Explicabo
+            est facilis deserunt quis sit adipisci temporibus animi iure alias.
+            Illum veritatis autem maxime saepe alias corporis laboriosam totam
+            nulla neque! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Consequatur ipsum deleniti error temporibus minima iusto aliquam
+            officia qui fuga et repellat eos ducimus consectetur reiciendis quasi,
+            cupiditate ullam odit modi? Lorem ipsum dolor sit amet consectetur
+            adipisicing elit. Iure voluptatem ab saepe dolor maxime hic facere,
+            ipsam dolore praesentium earum voluptatum minus impedit quis soluta
+            necessitatibus qui sunt minima aperiam! Lorem ipsum dolor sit, amet
+            consectetur adipisicing elit. Alias praesentium rem ad dignissimos
+            magnam necessitatibus harum debitis aliquid perferendis ex ipsam
+            cumque nobis itaque optio ea, atque placeat assumenda magni. Lorem
+            ipsum dolor sit amet consectetur adipisicing elit. Porro, id minima
+            aperiam magnam dignissimos ratione vel aliquid nobis eveniet dolore
+            sit tenetur quisquam. Id dignissimos est voluptatem sit velit placeat.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure
+            consequatur voluptatibus amet corporis laborum voluptas odio, ipsa
+            placeat repellat ipsam impedit, voluptate fugiat! Cumque magni velit,
+            ad deleniti quam ipsum?
+          </p>
+        </div>
+
+        <!--divider-->
+        <hr class="w-full h-1 my-2 bg-green-400" />
+
+        
+        
+      </article>
+      <!--comment section starts-->
+      <div id="comment" class="mx-4 px-2 my-2 bg-white pb-4 lg:mx-auto lg:my-4 lg:px-8 md:w-4/5 shadow-sm rounded-2xl shadow-black">
+        <p class="px-2  font-bold pl-6 p-3 md:text-2xl md:pl-10  md:pt-5" >Comments</p>
+        <!--add comment start-->
+        <div class="flex flex-col mb-2 rounded-lg mx-4 px-2 pb-4 lg:mx-auto lg:my-4 lg:px-4 md:w-4/5 border border-slate-500 shadow shadow-sm-slate-200" id="comment-box">
+          <div class="my-3 md:my-6">
+            <h1 class="text-left mt-1 md:t-2 text-lg md:text-xl font-bold">Add a comment</h1>
+          </div>
+          <div class="">
+            <form action="" method="">
+              <textarea class="py-2 px-4 border-2 rounded-md w-full" name="" cols="30" rows="5" placeholder="Leave a comment"></textarea>
+              <button class="px-2 py-1 mt-1 md:px-4 md:py-2 md:mt-3 bg-purple-600 text-white rounded-xl hover:text-black text-md font-bold" type="submit">Post comment</button>
+            </form>
+          </div>
+          
+        </div>
+        <!--add comment ends-->
+
+        <!-- comment -->
+        <div class="flex flex-col mb-2 rounded-lg mx-4 px-2 pb-4 lg:mx-auto lg:my-4 lg:px-4 md:w-4/5 border border-slate-500 shadow shadow-sm-slate-200" id="comment-box">
+          <div class="flex flex-row justify-items-center pl-1 pt-2">
+            <img class="rounded-full w-[35px] h-[35px] md:w-[50px] md:h-[50px]" src="./logo.PNG" alt="">
+            <div>
+              <p class="font-bold text-sm ml-3 md:mt-[6px] md:ml-4 text-nowrap">Name of commentor</p>
+              <p class="italic text-[12px] ml-3 md:ml-8  py-2">Date and time of comment</p>
+            </div>
+          </div>
+          <div class="flex flex-row justify-items-center pl-2 pt-2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus amet recusandae, facilis voluptatibus error ipsa aut quis laboriosam molestias tempora deleniti voluptatem in quaerat eius atque voluptatum soluta alias provident.</p>
+          </div>
+
+        </div>
+        <!--comment ends-->
+        <!-- comment -->
+        <div class="flex flex-col mb-2 rounded-lg mx-4 px-2 pb-4 lg:mx-auto lg:my-4 lg:px-4 md:w-4/5 border border-slate-500 shadow shadow-sm-slate-200" id="comment-box">
+          <div class="flex flex-row justify-items-center pl-1 pt-2">
+            <img class="rounded-full w-[35px] h-[35px] md:w-[50px] md:h-[50px]" src="./logo.PNG" alt="">
+            <div>
+              <p class="font-bold text-sm ml-3 md:mt-[6px] md:ml-4 text-nowrap">Name of commentor</p>
+              <p class="italic text-[12px] ml-3 md:ml-8  py-2">Date and time of comment</p>
+            </div>
+          </div>
+          <div class="flex flex-row justify-items-center pl-2 pt-2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus amet recusandae, facilis voluptatibus error ipsa aut quis laboriosam molestias tempora deleniti voluptatem in quaerat eius atque voluptatum soluta alias provident.</p>
+          </div>
+
+        </div>
+        <!--comment ends-->
+        <!-- comment -->
+        <div class="flex flex-col mb-2 rounded-lg mx-4 px-2 pb-4 lg:mx-auto lg:my-4 lg:px-4 md:w-4/5 border border-slate-500 shadow shadow-sm-slate-200" id="comment-box">
+          <div class="flex flex-row justify-items-center pl-1 pt-2">
+            <img class="rounded-full w-[35px] h-[35px] md:w-[50px] md:h-[50px]" src="./logo.PNG" alt="">
+            <div>
+              <p class="font-bold text-sm ml-3 md:mt-[6px] md:ml-4 text-nowrap">Name of commentor</p>
+              <p class="italic text-[12px] ml-3 md:ml-8  py-2">Date and time of comment</p>
+            </div>
+          </div>
+          <div class="flex flex-row justify-items-center pl-2 pt-2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus amet recusandae, facilis voluptatibus error ipsa aut quis laboriosam molestias tempora deleniti voluptatem in quaerat eius atque voluptatum soluta alias provident.</p>
+          </div>
+
+        </div>
+        <!--comment ends-->
+        <!-- comment -->
+        <div class="flex flex-col mb-2 rounded-lg mx-4 px-2 pb-4 lg:mx-auto lg:my-4 lg:px-4 md:w-4/5 border border-slate-500 shadow shadow-sm-slate-200" id="comment-box">
+          <div class="flex flex-row justify-items-center pl-1 pt-2">
+            <img class="rounded-full w-[35px] h-[35px] md:w-[50px] md:h-[50px]" src="./logo.PNG" alt="">
+            <div>
+              <p class="font-bold text-sm ml-3 md:mt-[6px] md:ml-4 text-nowrap">Name of commentor</p>
+              <p class="italic text-[12px] ml-3 md:ml-8  py-2">Date and time of comment</p>
+            </div>
+          </div>
+          <div class="flex flex-row justify-items-center pl-2 pt-2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus amet recusandae, facilis voluptatibus error ipsa aut quis laboriosam molestias tempora deleniti voluptatem in quaerat eius atque voluptatum soluta alias provident.</p>
+          </div>
+
+        </div>
+        <!--comment ends-->
+        <!-- comment -->
+        <div class="flex flex-col mb-2 rounded-lg mx-4 px-2 pb-4 lg:mx-auto lg:my-4 lg:px-4 md:w-4/5 border border-slate-500 shadow shadow-sm-slate-200" id="comment-box">
+          <div class="flex flex-row justify-items-center pl-1 pt-2">
+            <img class="rounded-full w-[35px] h-[35px] md:w-[50px] md:h-[50px]" src="./logo.PNG" alt="">
+            <div>
+              <p class="font-bold text-sm ml-3 md:mt-[6px] md:ml-4 text-nowrap">Name of commentor</p>
+              <p class="italic text-[12px] ml-3 md:ml-8  py-2">Date and time of comment</p>
+            </div>
+          </div>
+          <div class="flex flex-row justify-items-center pl-2 pt-2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus amet recusandae, facilis voluptatibus error ipsa aut quis laboriosam molestias tempora deleniti voluptatem in quaerat eius atque voluptatum soluta alias provident.</p>
+          </div>
+
+        </div>
+        <!--comment ends-->
+        <!-- comment -->
+        <div class="flex flex-col mb-2 rounded-lg mx-4 px-2 pb-4 lg:mx-auto lg:my-4 lg:px-4 md:w-4/5 border border-slate-500 shadow shadow-sm-slate-200" id="comment-box">
+          <div class="flex flex-row justify-items-center pl-1 pt-2">
+            <img class="rounded-full w-[35px] h-[35px] md:w-[50px] md:h-[50px]" src="./logo.PNG" alt="">
+            <div>
+              <p class="font-bold text-sm ml-3 md:mt-[6px] md:ml-4 text-nowrap">Name of commentor</p>
+              <p class="italic text-[12px] ml-3 md:ml-8  py-2">Date and time of comment</p>
+            </div>
+          </div>
+          <div class="flex flex-row justify-items-center pl-2 pt-2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus amet recusandae, facilis voluptatibus error ipsa aut quis laboriosam molestias tempora deleniti voluptatem in quaerat eius atque voluptatum soluta alias provident.</p>
+          </div>
+
+        </div>
+        <!--comment ends-->
+        <!-- comment -->
+        <div class="flex flex-col mb-2 rounded-lg mx-4 px-2 pb-4 lg:mx-auto lg:my-4 lg:px-4 md:w-4/5 border border-slate-500 shadow shadow-sm-slate-200" id="comment-box">
+          <div class="flex flex-row justify-items-center pl-1 pt-2">
+            <img class="rounded-full w-[35px] h-[35px] md:w-[50px] md:h-[50px]" src="./logo.PNG" alt="">
+            <div>
+              <p class="font-bold text-sm ml-3 md:mt-[6px] md:ml-4 text-nowrap">Name of commentor</p>
+              <p class="italic text-[12px] ml-3 md:ml-8  py-2">Date and time of comment</p>
+            </div>
+          </div>
+          <div class="flex flex-row justify-items-center pl-2 pt-2">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellendus amet recusandae, facilis voluptatibus error ipsa aut quis laboriosam molestias tempora deleniti voluptatem in quaerat eius atque voluptatum soluta alias provident.</p>
+          </div>
+
+        </div>
+        <!--comment ends-->
+        <!--comment section ends--> 
+      </div>
+    </main>
+    <footer class="flex flex-col bg-theme-primary w-full text-white p-2">
+      <div class="self-center">
+        <ul class="flex flex-row gap-2 pl-2">
+          <li class="hover:text-orange-400 text-nowrap">
+            <a class="" href="./about-us.html">About Us</a>
+          </li>
+          |
+          <li class="hover:text-orange-400 text-nowrap">
+            <a href="./privacy-policy.html">Privacy Policy</a>
+          </li>
+          |
+          <li class="hover:text-orange-400 text-nowrap">
+            <a href="./terms-and-conditions.html">T & Cs</a>
+          </li>
+          |
+          <li class="hover:text-orange-400 text-nowrap">
+            <a href="./contact-us.html">Contact Us</a>
+          </li>
+        </ul>
+      </div>
+      <p class="text-center">
+        Copyright &copy;<a
+          class="hover:text-orange-400 text-nowrap"
+          href="https://doctorshealthinfo.com"
+          >Doctors Health Info</a
+        ><span id="date"></span>
+      </p>
+      <p class="text-center">All rights reserved.</p>
+    </footer>
+
+    <script src="./js/script.js"></script>
+  </body>
+</html>

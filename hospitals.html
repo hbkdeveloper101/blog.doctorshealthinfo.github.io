@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctors Health Info - Hospitals</title>
+  <meta name="description" content="Doctors Health Info is a health related blog" />
+  <meta name="keywords" content="health,doctors,information, blood donate, blog,health blog, Talk with doctors" />
+  <link rel="stylesheet" href="./css/tailwindcss.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./assets/fontawesome-free-6.5.1-web/css/all.min.css"></head>
+  <body class="bg-slate-200 scroll-smooth">
+    <!--modal for search-->
+    <div class="hidden flex-col text-white text-lg  h-screen w-screen absolute bg-black opacity-95" id="search-modal">
+      <button class="hover:text-orange-400 absolute top-4 right-8 text-3xl md:right-20" id="close-btn"> &times;</button>  
+      <form class="  mt-28 mx-auto" action="">
+          <div class="bg-slate-200 rounded-2xl">
+            <input class="rounded-l-2xl h-[50px] pl-6 focus:outline-0 border-0 text-black" type="search" name="search" id="search" placeholder="Search" />
+            <button class="hover:text-orange-400 text-black px-4" type="submit"><i class="fa-solid fa-search"></i></button>
+        </div>
+          <p class="text-center mx-auto my-4">Press Enter to search</p>
+        </form>
+    </div>
+    
+    <!--header-->
+    <header class="bg-theme-primary  text-white w-full shadow p-1 shadow-black">
+
+      <!--Navigation-->
+      <nav class="flex items-center mt-1 justify-between px-1 h-16 md:gap-4 md-w-full" id="dropdown">
+        <!--Logo and Name-->
+        <div class="flex flex-row justify-center items-center">
+          <img class="h-[50px] w-[50px] rounded-full px-1 py-1 md:ml-4" src="./logo.PNG" alt="" />
+          <h1 class="hover:text-orange-400 text-nowrap text-base font-bold border-2 px-1 m sm:text-base lg:text-2xl lg:p-2 lg:mx-6"><a href="./index.html">Doctors Health Info</a></h1>
+        </div>
+        <!--Main Nav - behave dropdown-->
+        <div id="dropdown-menu" class=" absolute -top-full left-0 max-md:bg-theme-primary w-full flex flex-col gap-2 text-sm   md:static md:flex-row md:justify-between md:text-sm lg:px-16">
+          <ul class="pb-4 md:pb-0 flex flex-col items-center gap-2 font-bold md:ml-4 md:flex-row md:gap-4 lg:text-lg lg:gap-8">
+            <li class="hover:text-orange-400"><a class="" href="./index.html"><i class="fa-solid fa-home"></i></a></li>
+            <li class="hover:text-orange-400 text-nowrap"><a href="./doctors.html">Doctors</a></li>
+            <li class="hover:text-orange-400 text-nowrap"><a href="./hospitals.html">Hospitals</a></li>
+            <li class="hover:text-orange-400 text-nowrap"><a href="./forum.html">Forum</a></li>
+            <li class="hover:text-orange-400 text-nowrap"><a href="./blog.html">Blog</a></li>
+          </ul>
+
+        </div>
+        <!--Hamburger Menu Button-->
+        <div class="flex fle-row ">
+
+          <!--Profile and search-->
+          <div class="flex flex-row gap-2 md:gap-8 px-auto text-lg mx-auto md:mr-12">
+            <button class="hover:text-orange-400 text-nowrap static md:px-2 md:py-1" id="search-btn"><i class="fa-solid fa-search fa-md"></i></button>
+            <button class="hover:text-orange-400 text-nowrap static md:px-2 px-1 md:border md:rounded-full md:mr-2" id="profile-btn"><i class="fa-solid fa-user fa-md"></i></button>
+            <div class="flex flex-col absolute -top-full right-7 lg:right-6 z-20 bg-slate-300 text-black text-sm gap-1 font-semibold rounded-md px-2 py-1" id="profile-modal">
+              <a class="hover:text-orange-400 text-nowrap" href="./signin.html"><i class="fa-solid fa-sign-in-alt pr-2"></i>Log In</a>
+              <a class="hover:text-orange-400 text-nowrap" href="./signup.html"><i class="fa-solid fa-sign-out-alt pr-2"></i>Sign Up</a>
+            </div>
+          </div>
+          <!--Hamburger Menu-->
+          <div class="border px-1 m-2 rounded-md  md:hidden" id="toggle-button">
+            <i class="fa-solid fa-bars fa-lg"></i>
+          </div>
+          
+      </div>
+      </nav>
+    </header>
+    <main class="grid sm:grid-cols-1 sm:gap-2 lg:grid-cols-1">
+      <div class="text-3xl font-bold text-center mx-auto my-8 text-red-300" id="">
+        <h1 class="text-green-600">Only blog works</h1> <br/>
+        <h1>Page is under construction</h1>
+       </div>
+    </main>
+    <footer class="flex flex-col bg-theme-primary w-full text-white p-2">
+      <div class="self-center">
+        <ul class="flex flex-row gap-2 pl-2  ">
+          <li class="hover:text-orange-400 text-nowrap"><a class="" href="./about-us.html">About Us</a></li>|
+          <li class="hover:text-orange-400 text-nowrap"><a href="./privacy-policy.html">Privacy Policy</a></li>|
+          <li class="hover:text-orange-400 text-nowrap"><a href="./terms-and-conditions.html">T & Cs</a></li>|
+          <li class="hover:text-orange-400 text-nowrap"><a href="./contact-us.html">Contact Us</a></li>
+        </ul>
+      </div>
+      <p class="text-center">Copyright &copy;<a class="hover:text-orange-400 text-nowrap" href="https://doctorshealthinfo.com">Doctors Health Info</a><span id="date"></span></p>
+      <p class="text-center">All rights reserved.</p>
+    </footer>
+  
+    <script src="./js/script.js"></script>
+  </body>
+</html>

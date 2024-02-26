@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Doctors Health Info - Home</title>
+  <meta name="description" content="Doctors Health Info is a health related blog" />
+  <meta name="keywords" content="health,doctors,information, blood donate, blog,health blog, Talk with doctors" />
+  <link rel="stylesheet" href="./css/tailwindcss.css" />
+  <link rel="stylesheet" href="./css/style.css" />
+  <link rel="stylesheet" href="./assets/fontawesome-free-6.5.1-web/css/all.min.css"></head>
+  <body class="bg-slate-200 scroll-smooth">
+    <!--modal for search-->
+    <div class="hidden flex-col text-white text-lg  h-screen w-screen absolute bg-black opacity-95" id="search-modal">
+      <button class="hover:text-orange-400 absolute top-4 right-8 text-3xl md:right-20" id="close-btn"> &times;</button>  
+      <form class="  mt-28 mx-auto" action="">
+          <div class="bg-slate-200 rounded-2xl">
+            <input class="rounded-l-2xl h-[50px] pl-6 focus:outline-0 border-0 text-black" type="search" name="search" id="search" placeholder="Search" />
+            <button class="hover:text-orange-400 text-black px-4" type="submit"><i class="fa-solid fa-search"></i></button>
+        </div>
+          <p class="text-center mx-auto my-4">Press Enter to search</p>
+        </form>
+    </div>
+    
+    <!--header-->
+    <header class="bg-theme-primary  text-white w-full shadow p-1 shadow-black">
+
+      <!--Navigation-->
+      <nav class="flex items-center mt-1 justify-between px-1 h-16 md:gap-4 md-w-full" id="dropdown">
+        <!--Logo and Name-->
+        <div class="flex flex-row justify-center items-center">
+          <img class="h-[50px] w-[50px] rounded-full px-1 py-1 md:ml-4" src="./logo.PNG" alt="" />
+          <h1 class="hover:text-orange-400 text-nowrap text-base font-bold border-2 px-1 m sm:text-base lg:text-2xl lg:p-2 lg:mx-6"><a href="./index.html">Doctors Health Info</a></h1>
+        </div>
+        <!--Main Nav - behave dropdown-->
+        <div id="dropdown-menu" class=" absolute -top-full left-0 max-md:bg-theme-primary w-full flex flex-col gap-2 text-sm   md:static md:flex-row md:justify-between md:text-sm lg:px-16">
+          <ul class="pb-4 md:pb-0 flex flex-col items-center gap-2 font-bold md:ml-4 md:flex-row md:gap-4 lg:text-lg lg:gap-8">
+            <li class="hover:text-orange-400"><a class="" href="./index.html"><i class="fa-solid fa-home"></i></a></li>
+            <li class="hover:text-orange-400 text-nowrap"><a href="./doctors.html">Doctors</a></li>
+            <li class="hover:text-orange-400 text-nowrap"><a href="./hospitals.html">Hospitals</a></li>
+            <li class="hover:text-orange-400 text-nowrap"><a href="./forum.html">Forum</a></li>
+            <li class="hover:text-orange-400 text-nowrap"><a href="./blog.html">Blog</a></li>
+          </ul>
+
+        </div>
+        <!--Hamburger Menu Button-->
+        <div class="flex fle-row ">
+
+          <!--Profile and search-->
+          <div class="flex flex-row gap-2 md:gap-8 px-auto text-lg mx-auto md:mr-12">
+            <button class="hover:text-orange-400 text-nowrap static md:px-2 md:py-1" id="search-btn"><i class="fa-solid fa-search fa-md"></i></button>
+            <button class="hover:text-orange-400 text-nowrap static md:px-2 px-1 md:border md:rounded-full md:mr-2" id="profile-btn"><i class="fa-solid fa-user fa-md"></i></button>
+            <div class="flex flex-col absolute -top-full right-7 lg:right-6 z-20 bg-slate-300 text-black text-sm gap-1 font-semibold rounded-md px-2 py-1" id="profile-modal">
+              <a class="hover:text-orange-400 text-nowrap" href="./signin.html"><i class="fa-solid fa-sign-in-alt pr-2"></i>Log In</a>
+              <a class="hover:text-orange-400 text-nowrap" href="./signup.html"><i class="fa-solid fa-sign-out-alt pr-2"></i>Sign Up</a>
+            </div>
+          </div>
+          <!--Hamburger Menu-->
+          <div class="border px-1 m-2 rounded-md  md:hidden" id="toggle-button">
+            <i class="fa-solid fa-bars fa-lg"></i>
+          </div>
+          
+      </div>
+      </nav>
+    </header>
+    <!--Main page-->
+    
+    <!--categories template for middle and large screen only-->
+    <nav
+      class="hidden text-sm md:flex flex-row w-full overflow-hidden bg-slate-100"
+    >
+      <ul
+        class="grid md:grid-cols-8 lg:grid-cols-10 mx-auto gap-2 overflow-visible font-semibold text-blue-800"
+      >
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Skin Health</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Diseases</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Fitness</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Skin Health</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Diseases</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Fitness</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Skin Health</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Diseases</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Fitness</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Skin Health</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Diseases</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap">
+          <a href="">Fitness</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap">
+          <a href="">Skin Health</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap">
+          <a href="">Diseases</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap">
+          <a href="">Fitness</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Diseases</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Fitness</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Skin Health</a>
+        </li>
+        <li class="hover:text-orange-400 text-nowrap my-1 py-0">
+          <a href="">Diseases</a>
+        </li>
+      </ul>
+    </nav>
+      <div class="flex flex-col w-full lg:flex-col gap-1">
+        <div class="grid grid-cols-1 mx-2 my-1 sm:grid-cols-2 md:grid-cols-3 lg:my-4 lg:gap-4 lg:grid-cols-4 lg:mx-auto">
+          <!--Adverstisement Area -->  
+          <!-- <div class="col-span-1 my-2 md:my-4 md:col-span-3 lg:col-span-4 bg-black h-40 md:h-60 lg:h-80 w-[90vw] place-items-center mx-2">
+            helo
+          </div> -->
+          <!--All articles paginated-->
+          <article class=" flex flex-col bg-white mx-auto my-2 p-2 rounded-md shadow-sm border-[1px] shadow-slate-400 sm:mx-8 md:mx-2 lg:w-[250px] lg:h[200px]">
+            <a href="">
+              <img class="hover:transform hover:scale-105 transition duration-300 w-[250px] h-[200px] mx-auto" src="./IMG-20240206-WA0030.jpg" alt="sun glasses"/>
+            </a>
+            <div class="flex flex-col text-center" id="content">
+              <h2 class="text-center lg:text-base mt-2">
+                <a class="font-bold" href="./blogpost.html">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Solutaitationem est quod?
+                </a>
+              </h2>
+              <p class="hover:text-orange-400 text-center px-2 py-1 rounded-md bg-green-300 m-auto font-semibold">
+                <a href="">category</a>
+              </p>
+            </div>
+          </article>
+          <!--large ad board-->
+          <!-- <article class="hidden sm:flex flex-col col-span-2 mx-auto my-2 p-2 rounded-md shadow-md border-[1px] shadow-black sm:mx-8 lg:w-full lg:h-[300px]">
+            <img class="w-full h-full mx-auto" src="./IMG-20240206-WA0030.jpg" alt="sun glasses">
+          </article> -->
+          <article class=" flex flex-col bg-white mx-auto my-2 p-2 rounded-md shadow-sm border-[1px] shadow-slate-400 sm:mx-8 md:mx-2 lg:w-[250px] lg:h[200px]">
+            <a href="">
+              <img class="hover:transform hover:scale-105 transition duration-300 w-[250px] h-[200px] mx-auto" src="./IMG-20240206-WA0030.jpg" alt="sun glasses"/>
+            </a>
+            <div class="flex flex-col text-center" id="content">
+              <h2 class="text-center lg:text-base mt-2">
+                <a class="font-bold" href="./blogpost.html">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Solutaitationem est quod?
+                </a>
+              </h2>
+              <p class="hover:text-orange-400 text-center px-2 py-1 rounded-md bg-green-300 m-auto font-semibold">
+                <a href="">category</a>
+              </p>
+            </div>
+          </article>
+          <article class=" flex flex-col bg-white mx-auto my-2 p-2 rounded-md shadow-sm border-[1px] shadow-slate-400 sm:mx-8 md:mx-2 lg:w-[250px] lg:h[200px]">
+            <a href="">
+              <img class="hover:transform hover:scale-105 transition duration-300 w-[250px] h-[200px] mx-auto" src="./IMG-20240206-WA0030.jpg" alt="sun glasses"/>
+            </a>
+            <div class="flex flex-col text-center" id="content">
+              <h2 class="text-center lg:text-base mt-2">
+                <a class="font-bold" href="./blogpost.html">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Solutaitationem est quod?
+                </a>
+              </h2>
+              <p class="hover:text-orange-400 text-center px-2 py-1 rounded-md bg-green-300 m-auto font-semibold">
+                <a href="">category</a>
+              </p>
+            </div>
+          </article>
+          <article class=" flex flex-col bg-white mx-auto my-2 p-2 rounded-md shadow-sm border-[1px] shadow-slate-400 sm:mx-8 md:mx-2 lg:w-[250px] lg:h[200px]">
+            <a href="">
+              <img class="hover:transform hover:scale-105 transition duration-300 w-[250px] h-[200px] mx-auto" src="./IMG-20240206-WA0030.jpg" alt="sun glasses"/>
+            </a>
+            <div class="flex flex-col text-center" id="content">
+              <h2 class="text-center lg:text-base mt-2">
+                <a class="font-bold" href="./blogpost.html">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Solutaitationem est quod?
+                </a>
+              </h2>
+              <p class="hover:text-orange-400 text-center px-2 py-1 rounded-md bg-green-300 m-auto font-semibold">
+                <a href="">category</a>
+              </p>
+            </div>
+          </article>
+          <article class=" flex flex-col bg-white mx-auto my-2 p-2 rounded-md shadow-sm border-[1px] shadow-slate-400 sm:mx-8 md:mx-2 lg:w-[250px] lg:h[200px]">
+            <a href="">
+              <img class="hover:transform hover:scale-105 transition duration-300 w-[250px] h-[200px] mx-auto" src="./IMG-20240206-WA0030.jpg" alt="sun glasses"/>
+            </a>
+            <div class="flex flex-col text-center" id="content">
+              <h2 class="text-center lg:text-base mt-2">
+                <a class="font-bold" href="./blogpost.html">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Solutaitationem est quod?
+                </a>
+              </h2>
+              <p class="hover:text-orange-400 text-center px-2 py-1 rounded-md bg-green-300 m-auto font-semibold">
+                <a href="">category</a>
+              </p>
+            </div>
+          </article>
+          <article class=" flex flex-col bg-white mx-auto my-2 p-2 rounded-md shadow-sm border-[1px] shadow-slate-400 sm:mx-8 md:mx-2 lg:w-[250px] lg:h[200px]">
+            <a href="">
+              <img class="hover:transform hover:scale-105 transition duration-300 w-[250px] h-[200px] mx-auto" src="./IMG-20240206-WA0030.jpg" alt="sun glasses"/>
+            </a>
+            <div class="flex flex-col text-center" id="content">
+              <h2 class="text-center lg:text-base mt-2">
+                <a class="font-bold" href="./blogpost.html">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Solutaitationem est quod?
+                </a>
+              </h2>
+              <p class="hover:text-orange-400 text-center px-2 py-1 rounded-md bg-green-300 m-auto font-semibold">
+                <a href="">category</a>
+              </p>
+            </div>
+          </article>
+          <article class=" flex flex-col bg-white mx-auto my-2 p-2 rounded-md shadow-sm border-[1px] shadow-slate-400 sm:mx-8 md:mx-2 lg:w-[250px] lg:h[200px]">
+            <a href="">
+              <img class="hover:transform hover:scale-105 transition duration-300 w-[250px] h-[200px] mx-auto" src="./IMG-20240206-WA0030.jpg" alt="sun glasses"/>
+            </a>
+            <div class="flex flex-col text-center" id="content">
+              <h2 class="text-center lg:text-base mt-2">
+                <a class="font-bold" href="./blogpost.html">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Solutaitationem est quod?
+                </a>
+              </h2>
+              <p class="hover:text-orange-400 text-center px-2 py-1 rounded-md bg-green-300 m-auto font-semibold">
+                <a href="">category</a>
+              </p>
+            </div>
+          </article>
+          <article class=" flex flex-col bg-white mx-auto my-2 p-2 rounded-md shadow-sm border-[1px] shadow-slate-400 sm:mx-8 md:mx-2 lg:w-[250px] lg:h[200px]">
+            <a href="">
+              <img class="hover:transform hover:scale-105 transition duration-300 w-[250px] h-[200px] mx-auto" src="./IMG-20240206-WA0030.jpg" alt="sun glasses"/>
+            </a>
+            <div class="flex flex-col text-center" id="content">
+              <h2 class="text-center lg:text-base mt-2">
+                <a class="font-bold" href="./blogpost.html">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Solutaitationem est quod?
+                </a>
+              </h2>
+              <p class="hover:text-orange-400 text-center px-2 py-1 rounded-md bg-green-300 m-auto font-semibold">
+                <a href="">category</a>
+              </p>
+            </div>
+          </article>
+          
+        </div>
+        <div class="mx-2 my-1 lg:my-4  lg:gap-4 lg:mx-auto" id="pagination">
+
+          <ul class="flex font-bold mx-auto md:gap-8 bg-slate-300">
+            <li class="hover:bg-orange-300 px-2 py-1 md:px-6 md:py-3 mx-auto"><a href=""><i class="fa-solid fa-chevron-left fa-lg"></i></a></li>
+            <li class="hover:bg-orange-300 px-2 py-1 md:px-6 md:py-3 mx-auto"><a href="">1</a></li>
+            <li class="hover:bg-orange-300 px-2 py-1 md:px-6 md:py-3 mx-auto"><a href="">2</a></li>
+            <li class="hover:bg-orange-300 px-2 py-1 md:px-6 md:py-3 mx-auto"><a href="">3</a></li>
+            <li class="hover:bg-orange-300 px-2 py-1 md:px-6 md:py-3 mx-auto"><a href="">4</a></li>
+            <li class="hover:bg-orange-300 px-2 py-1 md:px-6 md:py-3 mx-auto"><a href="">5</a></li>
+            <li class="hover:bg-orange-300 px-2 py-1 md:px-6 md:py-3 mx-auto"><a href=""><i class="fa-solid fa-chevron-right fa-lg"></i></a></li>
+          </ul>
+        </div>    
+        <!--posts ends-->
+      </div>    
+    </main>
+
+      <footer class="flex flex-col bg-theme-primary w-full text-white p-2 overflow-hidden">
+        <div class="self-center">
+          <ul class="flex flex-row gap-2 pl-2  ">
+            <li class="hover:text-orange-400 text-nowrap"><a class="" href="./about-us.html">About Us</a></li>|
+            <li class="hover:text-orange-400 text-nowrap"><a href="./privacy-policy.html">Privacy Policy</a></li>|
+            <li class="hover:text-orange-400 text-nowrap"><a href="./terms-and-conditions.html">T & Cs</a></li>|
+            <li class="hover:text-orange-400 text-nowrap"><a href="./contact-us.html">Contact Us</a></li>
+          </ul>
+        </div>
+        <p class="text-center">Copyright &copy;<a class="hover:text-orange-400 text-nowrap" href="https://doctorshealthinfo.com">Doctors Health Info</a><span id="date"></span></p>
+        <p class="text-center">All rights reserved.</p>
+      </footer>
+  
+    <script src="./js/script.js"></script>
+  
+  </body>
+</html>
